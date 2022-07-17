@@ -5,7 +5,7 @@ import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class Converter {
+ class Converter {
 
     private static final Map map = Stream.of(new Object[][] {
             {1,"I"},

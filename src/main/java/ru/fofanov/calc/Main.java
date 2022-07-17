@@ -16,12 +16,19 @@ public class Main {
 
         String userInput = br.readLine();
 
-        int[] dataInput = Helper.Validator(userInput);
+        System.out.println(calc(userInput));
 
-        String value = Helper.Calc(dataInput);
 
-        System.out.println(value);
+    }
 
+
+    public static String calc(String input){
+
+        int[] arrInput = Helper.Validator(input);
+
+        String value = Helper.Calc(arrInput);
+
+        return value;
 
     }
 

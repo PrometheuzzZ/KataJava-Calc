@@ -4,7 +4,7 @@ package ru.fofanov.calc;
 
 import static ru.fofanov.calc.Converter.RomanToInt10;
 
-public class Helper {
+ class Helper {
 
     public static String[] StrSplit(String line){
         String[] arrSplit = line.split(" ");
