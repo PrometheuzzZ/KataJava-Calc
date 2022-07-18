@@ -1,11 +1,10 @@
 package ru.fofanov.calc;
 
-
 import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
- class Converter {
+class Converter {
 
     private static final Map map = Stream.of(new Object[][] {
             {1,"I"},
@@ -110,13 +109,12 @@ import java.util.stream.Stream;
             {100,"C"},
     }).collect(Collectors.toMap(data -> (Integer) data[0], data -> (String) data[1]));
 
-    public static String ArabicToRoman100(int arabic){
+    public static String ArabicToRoman100(int arabic) {
         return (String) map.get(arabic);
     }
 
-
     public static int RomanToInt10(String number) {
-        Map map = Stream.of(new Object[][]{
+        Map map = Stream.of(new Object[][] {
                 {1, "I"},
                 {2, "II"},
                 {3, "III"},

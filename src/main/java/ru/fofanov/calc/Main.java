@@ -6,10 +6,7 @@ import java.io.InputStreamReader;
 
 public class Main {
 
-
     public static void main(String[] args) throws IOException {
-
-
 
         while (true) {
             BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -23,8 +20,7 @@ public class Main {
 
     }
 
-
-    public static String calc(String input){
+    public static String calc(String input) {
 
         int[] arrInput = Helper.Validator(input);
 
