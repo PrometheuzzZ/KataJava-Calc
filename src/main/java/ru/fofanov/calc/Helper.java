@@ -11,6 +11,19 @@ import static ru.fofanov.calc.Converter.RomanToInt10;
         return arrSplit;
     }
 
+    public static boolean intToBoolean(int value){
+        if (value >= 1) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
+    public static int booleanToInt(boolean value){
+        return value ? 1 : 0;
+    }
+
 
     public static int[] Validator(String userInput){
         boolean valide;
@@ -21,7 +34,7 @@ import static ru.fofanov.calc.Converter.RomanToInt10;
         int numberTwo;
         int[] valideData = new int[4];
 
-        String[] userInputArr = StrSplit(userInput);
+        String[] userInputArr = StrSplit(userInput.toUpperCase());
 
         if(userInputArr.length==3){
             String operand = userInputArr[1];
@@ -54,11 +67,7 @@ import static ru.fofanov.calc.Converter.RomanToInt10;
                 valideData[0] = numberOne;
                 valideData[1] = numberTwo;
                 valideData[2] = operand.charAt(0);
-                if(arabic) {
-                   valideData[3] = 1;
-                } else {
-                   valideData[3] = 0;
-                }
+                valideData[3] = booleanToInt(arabic);
 
 
                 return valideData;
@@ -101,7 +110,7 @@ import static ru.fofanov.calc.Converter.RomanToInt10;
         }
 
 
-        if(data[3]==0){
+        if(!intToBoolean(data[3])){
             if(value>0){
                 return Converter.ArabicToRoman100(value);
             } else {
