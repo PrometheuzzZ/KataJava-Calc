@@ -10,14 +10,16 @@ public class Main {
     public static void main(String[] args) throws IOException {
 
 
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-        System.out.println("Введите пример: ");
+        while (true) {
+            BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-        String userInput = br.readLine();
+            System.out.println("Введите пример: ");
 
-        System.out.println(calc(userInput));
+            String userInput = br.readLine();
 
+            System.out.println(calc(userInput));
+        }
 
     }
 

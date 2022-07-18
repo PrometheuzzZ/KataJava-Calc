@@ -92,34 +92,38 @@ import static ru.fofanov.calc.Converter.RomanToInt10;
     public static String Calc(int[] data){
         // [0] - num one, [1] - num two, [2] operand int code, [3] arabic false/true - 0/1
         // operand '+' = 43, '-' = 45, '/' = 47, '*' = 42
-        int value = 0;
+        int result = 0;
+        int numberOne = data[0];
+        int numberTwo = data[1];
+        int operand = data[2];
+        boolean isRoman = !intToBoolean(data[3]);
 
-        switch (data[2]) {
+        switch (operand) {
             case  (43):
-                value = data[0] + data[1];
+                result = numberOne + numberTwo;
                 break;
             case (45):
-                value = data[0] - data[1];
+                result = numberOne - numberTwo;
                 break;
             case (47):
-                value = data[0] / data[1];
+                result = numberOne / numberTwo;
                 break;
             case (42):
-                value = data[0] * data[1];
+                result = numberOne * numberTwo;
                 break;
         }
 
 
-        if(!intToBoolean(data[3])){
-            if(value>0){
-                return Converter.ArabicToRoman100(value);
+        if(isRoman){
+            if(result>0){
+                return Converter.ArabicToRoman100(result);
             } else {
                 throw new RuntimeException("Exception: roman number less than zero");
             }
 
         }
 
-        return Integer.toString(value);
+        return Integer.toString(result);
     }
 
 
